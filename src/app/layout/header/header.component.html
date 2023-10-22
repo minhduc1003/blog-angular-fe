@@ -1,0 +1,16 @@
+<header class="header--container">
+  <div class="header--left">
+    <img src="../../../assets/mainLogo.png" alt="asd" />
+    <a [routerLink]="['/']">Home</a>
+    <a [routerLink]="['blog']">Blog</a>
+    <a [routerLink]="['contact']">Contact</a>
+  </div>
+  <div class="header--right">
+    <input placeholder="Search posts..." />
+    <div class="header--right__auth" [routerLink]="['login']">
+      <p>
+        Sign In
+      </p>
+    </div>
+  </div>
+</header>

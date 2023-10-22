@@ -1,0 +1,36 @@
+.header--container {
+  max-width: 1110px;
+  margin: 30px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header--left {
+  display: flex;
+  gap: 23px;
+  justify-content: center;
+  align-items: center;
+}
+.header--right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  input {
+    padding: 19px;
+    border-radius: 8px;
+    border: 1px solid gray;
+    outline: none;
+    &:focus {
+      border: 1px solid #00b4aa;
+    }
+  }
+  .header--right__auth {
+    padding: 19px 50px;
+    border-radius: 8px;
+    background-color: #00b4aa;
+    p {
+      color: white;
+    }
+  }
+}
