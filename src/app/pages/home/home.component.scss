@@ -52,11 +52,13 @@
     }
   }
   .home--news__items-container {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
 
-    gap: 10px;
+    gap: 40px 10px;
+    margin-bottom: 40px;
     .home--news__item-container {
-      width: 360px;
+      width: 260px;
       border-radius: 8px;
       position: relative;
 
@@ -71,7 +73,7 @@
         border-radius: 8px;
         width: 100%;
         height: 100%;
-        object-fit: fill;
+        object-fit: none;
       }
       .home--news__detail-wrapper {
         z-index: 10;

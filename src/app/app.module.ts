@@ -13,8 +13,10 @@ import { DayOfAuthorComponent } from './pages/home/components/day-of-author/day-
 import { BlogDetailComponent } from './pages/blog-detail/blog-detail.component';
 import { LoginComponent } from './pages/login/login.component';
 import { MainLayoutComponent } from './layout/main-layout/main-layout.component';
-import { InputTextComponent } from './pages/login/components/input-text/input-text.component';
 import { SignupComponent } from './pages/signup/signup.component';
+import { InputTextComponent } from './components/input-text/input-text.component';
+import { InputPasswordComponent } from './components/input-password/input-password.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -29,14 +31,12 @@ import { SignupComponent } from './pages/signup/signup.component';
     BlogDetailComponent,
     LoginComponent,
     MainLayoutComponent,
+    SignupComponent,
     InputTextComponent,
-    SignupComponent
+    InputPasswordComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

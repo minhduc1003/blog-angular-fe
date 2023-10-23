@@ -3,8 +3,6 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-input-text',
   templateUrl: './input-text.component.html',
-  styleUrls: ['./input-text.component.scss']
+  styleUrls: ['./input-text.component.scss'],
 })
-export class InputTextComponent {
-
-}
+export class InputTextComponent {}

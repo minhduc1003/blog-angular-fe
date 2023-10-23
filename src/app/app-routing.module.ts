@@ -6,6 +6,7 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { BlogDetailComponent } from './pages/blog-detail/blog-detail.component';
 import { LoginComponent } from './pages/login/login.component';
 import { MainLayoutComponent } from './layout/main-layout/main-layout.component';
+import { SignupComponent } from './pages/signup/signup.component';
 
 const routes: Routes = [
   {
@@ -34,6 +35,10 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent,
+  },
+  {
+    path: 'signup',
+    component: SignupComponent,
   },
   {
     path: '**',
