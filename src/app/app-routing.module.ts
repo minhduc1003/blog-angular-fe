@@ -7,6 +7,7 @@ import { BlogDetailComponent } from './pages/blog-detail/blog-detail.component';
 import { LoginComponent } from './pages/login/login.component';
 import { MainLayoutComponent } from './layout/main-layout/main-layout.component';
 import { SignupComponent } from './pages/signup/signup.component';
+import { CreateBlogComponent } from './pages/create-blog/create-blog.component';
 
 const routes: Routes = [
   {
@@ -29,6 +30,10 @@ const routes: Routes = [
       {
         path: 'blog/:id',
         component: BlogDetailComponent,
+      },
+      {
+        path: 'create',
+        component: CreateBlogComponent,
       },
     ],
   },

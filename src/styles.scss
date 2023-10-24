@@ -1,3 +1,6 @@
+@import "~quill/dist/quill.core.css";
+@import "~quill/dist/quill.bubble.css";
+@import "~quill/dist/quill.snow.css";
 html,
 body,
 div,
@@ -129,4 +132,15 @@ a {
 * {
   font-family: "Roboto", sans-serif;
   box-sizing: border-box;
+}
+.ql-toolbar {
+  margin-top: 50px;
+}
+.ql-container {
+  img {
+    width: 400px;
+    height: 250px;
+    margin: 0 auto;
+    object-fit: cover;
+  }
 }
