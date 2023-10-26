@@ -20,6 +20,8 @@ import { FormsModule } from '@angular/forms';
 import { CreateBlogComponent } from './pages/create-blog/create-blog.component';
 import { QuillModule } from 'ngx-quill';
 import { RouterModule } from '@angular/router';
+import { CardItemComponent } from './pages/home/components/card-item/card-item.component';
+import { provideHttpClient } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -38,6 +40,7 @@ import { RouterModule } from '@angular/router';
     InputTextComponent,
     InputPasswordComponent,
     CreateBlogComponent,
+    CardItemComponent,
   ],
   imports: [
     BrowserModule,
@@ -70,7 +73,7 @@ import { RouterModule } from '@angular/router';
       },
     }),
   ],
-  providers: [],
+  providers: [provideHttpClient()],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

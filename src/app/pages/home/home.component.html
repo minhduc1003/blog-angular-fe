@@ -16,97 +16,10 @@
       Newest update
     </h1>
   </div>
-  <div class="home--news__items-container">
-    <div class="home--news__item-container">
-      <div class="home--news__item-overlay"></div>
-      <img class="home--news__image" src="../../../assets/2.png" alt="asd" />
-      <div class="home--news__detail-wrapper">
-        <div class="home--news__detail">
-          <div class="home--news__category">duc</div>
-          <div class="home--news__dateAndAuthor">
-            <div>23/10/2003</div>
-            <div class='dot'></div>
-            <div>duc</div>
-          </div>
-        </div>
-        <h2 class="home--news__item--title">duc</h2>
-      </div>
-    </div>
-    <div class="home--news__item-container">
-      <div class="home--news__item-overlay"></div>
-      <img class="home--news__image" src="../../../assets/1.png" alt="asd" />
-      <div class="home--news__detail-wrapper">
-        <div class="home--news__detail">
-          <div class="home--news__category">duc</div>
-          <div class="home--news__dateAndAuthor">
-            <div>23/10/2003</div>
-            <div class='dot'></div>
-            <div>duc</div>
-          </div>
-        </div>
-        <h2 class="home--news__item--title">duc</h2>
-      </div>
-    </div>
-    <div class="home--news__item-container">
-      <div class="home--news__item-overlay"></div>
-      <img class="home--news__image" src="../../../assets/1.png" alt="asd" />
-      <div class="home--news__detail-wrapper">
-        <div class="home--news__detail">
-          <div class="home--news__category">duc</div>
-          <div class="home--news__dateAndAuthor">
-            <div>23/10/2003</div>
-            <div class='dot'></div>
-            <div>duc</div>
-          </div>
-        </div>
-        <h2 class="home--news__item--title">duc</h2>
-      </div>
-    </div>
-    <div class="home--news__item-container">
-      <div class="home--news__item-overlay"></div>
-      <img class="home--news__image" src="../../../assets/1.png" alt="asd" />
-      <div class="home--news__detail-wrapper">
-        <div class="home--news__detail">
-          <div class="home--news__category">duc</div>
-          <div class="home--news__dateAndAuthor">
-            <div>23/10/2003</div>
-            <div class='dot'></div>
-            <div>duc</div>
-          </div>
-        </div>
-        <h2 class="home--news__item--title">duc</h2>
-      </div>
-    </div>
-    <div class="home--news__item-container">
-      <div class="home--news__item-overlay"></div>
-      <img class="home--news__image" src="../../../assets/1.png" alt="asd" />
-      <div class="home--news__detail-wrapper">
-        <div class="home--news__detail">
-          <div class="home--news__category">duc</div>
-          <div class="home--news__dateAndAuthor">
-            <div>23/10/2003</div>
-            <div class='dot'></div>
-            <div>duc</div>
-          </div>
-        </div>
-        <h2 class="home--news__item--title">duc</h2>
-      </div>
-    </div>
-    <div class="home--news__item-container">
-      <div class="home--news__item-overlay"></div>
-      <img class="home--news__image" src="../../../assets/1.png" alt="asd" />
-      <div class="home--news__detail-wrapper">
-        <div class="home--news__detail">
-          <div class="home--news__category">duc</div>
-          <div class="home--news__dateAndAuthor">
-            <div>23/10/2003</div>
-            <div class='dot'></div>
-            <div>duc</div>
-          </div>
-        </div>
-        <h2 class="home--news__item--title">duc</h2>
-      </div>
-    </div>
+  <div class="home--news__items-container" *ngFor="let item of blog">
+    <app-card-item></app-card-item>
+
+
   </div>
 
 </section>
