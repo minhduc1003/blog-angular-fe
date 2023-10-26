@@ -2,13 +2,13 @@
   <div class="detail--heading">
     <img class="image" src="../../../assets/1.png" alt="" />
     <div class="description">
-      <div class="category">kien thuc</div>
-      <h2 class="title">set up phòng cực chill</h2>
+      <div class="category">{{blog.category.name}}</div>
+      <h2 class="title">{{blog.title}}</h2>
       <div class="dateAndAuthor-container">
         <div class="dateAndAuthor">
           <div>23/10/2003</div>
           <div class="dot"></div>
-          <div>ducdzvcc</div>
+          <div>{{blog.author}}</div>
         </div>
         <div>100 view</div>
       </div>
@@ -16,7 +16,8 @@
   </div>
 </div>
 <div class="main-content">
-  <h3>Chương 1</h3>
+  {{blog.description}}
+  <!-- <h3>Chương 1</h3>
   <p>
     Gastronomy atmosphere set aside. Slice butternut cooking home.
     Delicious romantic undisturbed raw platter will meld. Thick Skewers
@@ -55,5 +56,5 @@
     rarities selection, raw pastries richness magnificent atmosphere.
     Sweet soften dinners, cover mustard infused skillet, Skewers on
     culinary experience.
-  </p>
+  </p> -->
 </div>

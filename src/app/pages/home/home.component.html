@@ -16,10 +16,8 @@
       Newest update
     </h1>
   </div>
-  <div class="home--news__items-container" *ngFor="let item of blog">
-    <app-card-item></app-card-item>
-
-
+  <div class="home--news__items-container">
+    <app-card-item *ngFor="let item of blog;" [author]="item.author" [category]="item.category" [title]="item.title" [description]="item.description" [id]="item.id"></app-card-item>
   </div>
 
 </section>

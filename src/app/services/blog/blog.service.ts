@@ -13,4 +13,7 @@ export class BlogService {
   getAllBlog(): Observable<Blog[]> {
     return this.http.get<Blog[]>(this.apiUlr);
   }
+  getById(blogId: string): Observable<Blog> {
+    return this.http.get<Blog>(`${this.apiUlr}/${blogId}`);
+  }
 }

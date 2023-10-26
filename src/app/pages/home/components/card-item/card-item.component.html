@@ -1,15 +1,15 @@
-<div class="home--news__item-container">
+<div class="home--news__item-container" [routerLink]="['blog/'+id]">
   <div class="home--news__item-overlay"></div>
   <img class="home--news__image" src="../../../assets/2.png" alt="asd" />
   <div class="home--news__detail-wrapper">
     <div class="home--news__detail">
-      <div class="home--news__category">duc</div>
+      <div class="home--news__category">{{category.name}}</div>
       <div class="home--news__dateAndAuthor">
         <div>23/10/2003</div>
         <div class='dot'></div>
-        <div>duc</div>
+        <div>{{author}}</div>
       </div>
     </div>
-    <h2 class="home--news__item--title">duc</h2>
+    <h2 class="home--news__item--title">{{title}}</h2>
   </div>
 </div>
