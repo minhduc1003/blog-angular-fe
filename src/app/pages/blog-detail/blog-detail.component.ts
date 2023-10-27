@@ -1,4 +1,10 @@
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import {
+  Component,
+  Input,
+  OnDestroy,
+  OnInit,
+  ViewEncapsulation,
+} from '@angular/core';
 import { BlogService } from 'src/app/services/blog/blog.service';
 import { Blog } from 'src/app/type/IBlog';
 
@@ -6,6 +12,7 @@ import { Blog } from 'src/app/type/IBlog';
   selector: 'app-blog-detail',
   templateUrl: './blog-detail.component.html',
   styleUrls: ['./blog-detail.component.scss'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class BlogDetailComponent implements OnInit, OnDestroy {
   constructor(private blog_service: BlogService) {}

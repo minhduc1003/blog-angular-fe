@@ -6,11 +6,11 @@
   </h1>
   <form class="login-form">
     <div class="login-container">
-      <app-input-text [name]="'Email'" placeholder="'Enter your email'"></app-input-text>
+      <app-input-text [name]="'Email'" placeholder="Enter your email" (newItemEvent)="setPassword($event)"></app-input-text>
       <app-input-password></app-input-password>
       <p class="text-base">Don’t have an account?<a href="/signup" class="link"> Sign up</a></p>
     </div>
-
+    {{password}}
     <div class="btn-container">
       <button type="submit">
         LogIn
