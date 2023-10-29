@@ -19,6 +19,23 @@
       max-width: 500px;
       margin: 0 auto;
       margin-bottom: 50px;
+      .login-text {
+        label {
+          margin-bottom: 20px;
+          display: block;
+        }
+        input {
+          margin-bottom: 25px;
+          width: 100%;
+          border: 1px solid #ccc;
+          outline: none;
+          padding: 20px;
+          border-radius: 8px;
+          &:focus {
+            border: 1px solid #00b4aa;
+          }
+        }
+      }
     }
     .btn-container {
       width: 160px;

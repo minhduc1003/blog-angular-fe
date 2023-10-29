@@ -16,11 +16,11 @@ import {
 })
 export class InputTextComponent implements DoCheck {
   ngDoCheck(): void {
-    this.newItemEvent.emit(this.password);
+    this.textEvent.emit(this.text);
   }
 
-  @Output() newItemEvent = new EventEmitter<string>();
-  password: string = '';
+  @Output() textEvent = new EventEmitter<string>();
+  text: string = '';
   @Input() name: string = '';
   @Input() placeholder: string = '';
 }

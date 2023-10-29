@@ -11,7 +11,11 @@ export class BlogService {
 
   constructor(private http: HttpClient) {}
   getAllBlog(): Observable<Blog[]> {
-    return this.http.get<Blog[]>(this.apiUlr);
+    return this.http.get<Blog[]>(this.apiUlr, {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem('token')}`,
+      },
+    });
   }
   getById(blogId: string): Observable<Blog> {
     return this.http.get<Blog>(`${this.apiUlr}/${blogId}`);

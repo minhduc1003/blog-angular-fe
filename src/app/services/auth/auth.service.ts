@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -8,12 +9,12 @@ export class AuthService {
   apiUlr = 'https://localhost:7076/api/Auth';
   token: string | undefined = '';
   constructor(private http: HttpClient) {}
-  login(email: string, password: string): Promise<string> {
+  login(email: string, password: string): void {
     const data = {
       email,
       password,
     };
-    const promise = new Promise<string>((res, rej) => {
+    new Promise<string>(() => {
       this.http
         .post<{ token: string }>(`${this.apiUlr}/login`, data)
         .toPromise()
@@ -25,6 +26,14 @@ export class AuthService {
           }
         });
     });
-    return promise;
+  }
+  register(userName: string, email: string, password: string): Observable<any> {
+    const data = {
+      userName,
+      password,
+      email,
+    };
+
+    return this.http.post<any>(`${this.apiUlr}/Register`, data);
   }
 }

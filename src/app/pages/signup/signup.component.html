@@ -6,13 +6,19 @@
   </h1>
   <form class="login-form">
     <div class="login-container">
-      <app-input-text [name]="'Name'" [placeholder]="'Enter your name'"></app-input-text>
-      <app-input-text [name]="'Email'" [placeholder]="'Enter your email'"></app-input-text>
-      <app-input-password></app-input-password>
+      <div class="login-text">
+        <label htmlFor="userName">Name</label>
+        <input id="userName" name="userName" placeholder="Enter your user name" [(ngModel)]="userName" />
+      </div>
+      <div class="login-text">
+        <label htmlFor="email">Email</label>
+        <input id="email" name="email" placeholder="Enter your email" [(ngModel)]="email" />
+      </div>
+      <app-input-password (passwordEvent)="setPassword($event)"></app-input-password>
       <p class="text-base">If you have an account?
         <a href="/login" class="link"> Sign In</a>
     </div>
-    <div class="btn-container">
+    <div class="btn-container" (click)="handleSubmit()">
       <button type="submit">
         Sign Up
       </button>

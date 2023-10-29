@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-input-password',
@@ -10,4 +10,12 @@ export class InputPasswordComponent {
   handleSwitch() {
     this.show = !this.show;
   }
+  ngDoCheck(): void {
+    this.passwordEvent.emit(this.password);
+  }
+
+  @Output() passwordEvent = new EventEmitter<string>();
+  password: string = '';
+  @Input() name: string = '';
+  @Input() placeholder: string = '';
 }
