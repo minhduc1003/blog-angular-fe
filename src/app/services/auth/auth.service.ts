@@ -9,23 +9,24 @@ export class AuthService {
   apiUlr = 'https://localhost:7076/api/Auth';
   token: string | undefined = '';
   constructor(private http: HttpClient) {}
-  login(email: string, password: string): void {
+  login(email: string, password: string): Observable<any> {
     const data = {
       email,
       password,
     };
-    new Promise<string>(() => {
-      this.http
-        .post<{ token: string }>(`${this.apiUlr}/login`, data)
-        .toPromise()
-        .then((res) => {
-          const token = res?.token;
-          this.token = token;
-          if (token) {
-            localStorage.setItem('token', token);
-          }
-        });
-    });
+    return this.http.post<{ token: string }>(`${this.apiUlr}/login`, data);
+    // new Promise<string>(() => {
+    //   this.http
+    //     .post<{ token: string }>(`${this.apiUlr}/login`, data)
+    //     .toPromise()
+    //     .then((res) => {
+    //       const token = res?.token;
+    //       this.token = token;
+    //       if (token) {
+    //         localStorage.setItem('token', token);
+    //       }
+    //     });
+    // });
   }
   register(userName: string, email: string, password: string): Observable<any> {
     const data = {
@@ -35,5 +36,12 @@ export class AuthService {
     };
 
     return this.http.post<any>(`${this.apiUlr}/Register`, data);
+  }
+  isLogin(): boolean {
+    if (localStorage.getItem('token') == null) {
+      return false;
+    } else {
+      return true;
+    }
   }
 }

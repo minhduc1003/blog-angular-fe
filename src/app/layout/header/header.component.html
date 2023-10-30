@@ -7,10 +7,10 @@
   </div>
   <div class="header--right">
     <input placeholder="Search posts..." />
-    <div class="header--right__auth" [routerLink]="['login']">
+    <a class="header--right__auth" href='{{isLogin?"/login":"/create"}}'>
       <p>
-        Sign In
+        {{isLogin?"login":"Create a Post"}}
       </p>
-    </div>
+    </a>
   </div>
 </header>

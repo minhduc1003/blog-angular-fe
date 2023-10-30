@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Category } from 'src/app/type/ICategory';
+import { Image } from 'src/app/type/IImage';
 
 @Component({
   selector: 'app-card-item',
@@ -14,5 +15,13 @@ export class CardItemComponent {
   @Input() category: Category = {
     id: '',
     name: '',
+  };
+  @Input() image: Image = {
+    id: '',
+    fileDescription: '',
+    fileExtension: '',
+    fileName: '',
+    filePath: '',
+    fileSize: 0,
   };
 }

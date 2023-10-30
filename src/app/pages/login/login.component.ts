@@ -1,4 +1,5 @@
 import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth/auth.service';
 
 @Component({
@@ -17,8 +18,12 @@ export class LoginComponent {
     this.password = value;
     console.log(value);
   }
-  constructor(private auth_service: AuthService) {}
+  constructor(private auth_service: AuthService, private router: Router) {}
   handleSubmit(): void {
-    this.auth_service.login(this.email, this.password);
+    // this.auth_service.login(this.email, this.password);
+    this.auth_service.login(this.email, this.password).subscribe((data) => {
+      localStorage.setItem('token', JSON.stringify(data.token));
+      this.router.navigate(['/']);
+    });
   }
 }

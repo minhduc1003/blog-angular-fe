@@ -13,6 +13,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { MainLayoutComponent } from './layout/main-layout/main-layout.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { CreateBlogComponent } from './pages/create-blog/create-blog.component';
+import { AuthGuard } from './Guard/auth.guard';
 
 const routes: Routes = [
   {
@@ -39,6 +40,7 @@ const routes: Routes = [
       {
         path: 'create',
         component: CreateBlogComponent,
+        canActivate: [AuthGuard],
       },
     ],
   },

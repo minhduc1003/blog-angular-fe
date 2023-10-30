@@ -26,6 +26,15 @@ export class BlogDetailComponent implements OnInit, OnDestroy {
       id: '',
       name: '',
     },
+    imageId: '',
+    image: {
+      id: '',
+      fileDescription: '',
+      fileExtension: '',
+      fileName: '',
+      filePath: '',
+      fileSize: 0,
+    },
   };
   @Input() id: string = '';
   ngOnInit(): void {
@@ -46,6 +55,15 @@ export class BlogDetailComponent implements OnInit, OnDestroy {
       category: {
         id: '',
         name: '',
+      },
+      imageId: '',
+      image: {
+        id: '',
+        fileDescription: '',
+        fileExtension: '',
+        fileName: '',
+        filePath: '',
+        fileSize: 0,
       },
     };
   }

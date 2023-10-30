@@ -8,9 +8,15 @@ import { Blog } from 'src/app/type/IBlog';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit, OnDestroy {
+  isLogIn: boolean = false;
   blog: Blog[] = [];
   constructor(private blog_services: BlogService) {}
   ngOnInit(): void {
+    if (localStorage.getItem('token')) {
+      this.isLogIn = true;
+    } else {
+      this.isLogIn = false;
+    }
     this.blog_services.getAllBlog().subscribe({
       next: (blog) => {
         this.blog = blog;
