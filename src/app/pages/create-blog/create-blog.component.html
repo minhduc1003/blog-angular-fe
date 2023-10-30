@@ -1,16 +1,43 @@
 <section class="create-container">
   <div class="create--layout__2">
-    <app-input-text [name]="'Title'" [placeholder]="'Enter your title article'"></app-input-text>
-    <app-input-text [name]="'Category'" [placeholder]="'Enter your category'"></app-input-text>
+    <div class="input-text">
+      <label htmlFor="title">Title</label>
+
+      <input id="title" placeholder="Enter your title" [(ngModel)]="title" />
+    </div>
+    <div class="input-text">
+      <label htmlFor="author">Author</label>
+
+      <input id="author" placeholder="Enter your author" [(ngModel)]="author" />
+    </div>
+    <div class="input-text">
+      <label htmlFor="category">Category</label>
+      <div class="drop-down">
+        <div class="input-select" (click)="handleOpen()">
+          <input id="category" value='{{categoryName}}' name="category" type="text" disabled />
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="down">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+          </svg>
+        </div>
+        <ul *ngIf="dropDownOpen">
+          <li *ngFor="let item of categoryList;" (click)="getValue(item.id,item.name)">{{item.name}}</li>
+          <button class="drop-down-button" [routerLink]="['/category']">Add new category</button>
+        </ul>
+      </div>
+    </div>
     <label class="upload--image">
-      <input type="file">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="gray" class="upload">
+      <input type="file" (change)="handleUpload($event)">
+      <svg *ngIf="!disabledUploadImage" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="gray" class="upload">
         <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5m-13.5-9L12 3m0 0l4.5 4.5M12 3v13.5" />
       </svg>
+      <img *ngIf="disabledUploadImage" [src]="image.filePath" alt="" class="image-upload">
     </label>
   </div>
   <div>
-    <quill-editor theme="snow" [strict]="true"></quill-editor>
+    <quill-editor [(ngModel)]="editorValue" theme="snow" [strict]="true"></quill-editor>
   </div>
+  <button class="button-submit" (click)="handleSubmit()">
+    Submit
+  </button>
 
 </section>

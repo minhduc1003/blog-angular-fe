@@ -33,7 +33,7 @@ export class BlogDetailComponent implements OnInit, OnDestroy {
       fileExtension: '',
       fileName: '',
       filePath: '',
-      fileSize: 0,
+      fileSizeInByte: 0,
     },
   };
   @Input() id: string = '';
@@ -63,7 +63,7 @@ export class BlogDetailComponent implements OnInit, OnDestroy {
         fileExtension: '',
         fileName: '',
         filePath: '',
-        fileSize: 0,
+        fileSizeInByte: 0,
       },
     };
   }

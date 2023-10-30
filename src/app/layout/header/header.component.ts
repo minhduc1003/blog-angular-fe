@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { CookieService } from 'ngx-cookie-service';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -7,8 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   isLogin = false;
+  constructor(private cookie: CookieService) {}
   ngOnInit(): void {
-    !localStorage.getItem('token') == true
+    !this.cookie.get('token') == true
       ? (this.isLogin = true)
       : (this.isLogin = false);
   }

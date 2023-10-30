@@ -1,14 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-
+import { CookieService } from 'ngx-cookie-service';
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
   apiUlr = 'https://localhost:7076/api/Auth';
   token: string | undefined = '';
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private cookie: CookieService) {}
   login(email: string, password: string): Observable<any> {
     const data = {
       email,
@@ -38,7 +38,7 @@ export class AuthService {
     return this.http.post<any>(`${this.apiUlr}/Register`, data);
   }
   isLogin(): boolean {
-    if (localStorage.getItem('token') == null) {
+    if (this.cookie.get('token') == null) {
       return false;
     } else {
       return true;

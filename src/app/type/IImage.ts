@@ -1,8 +1,9 @@
 export interface Image {
-  id: string;
-  fileName: string;
-  fileDescription: string;
-  fileSize: number;
+  fileDescription?: string;
+  fileExtension?: string;
+  fileName?: string;
   filePath: string;
-  fileExtension: string;
+  fileSizeInByte?: number;
+  formFile?: File;
+  id: string;
 }

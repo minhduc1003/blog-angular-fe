@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { CookieService } from 'ngx-cookie-service';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './layout/header/header.component';
@@ -22,6 +22,7 @@ import { QuillModule } from 'ngx-quill';
 import { RouterModule } from '@angular/router';
 import { CardItemComponent } from './pages/home/components/card-item/card-item.component';
 import { provideHttpClient } from '@angular/common/http';
+import { CategoryComponent } from './pages/category/category/category.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { provideHttpClient } from '@angular/common/http';
     InputPasswordComponent,
     CreateBlogComponent,
     CardItemComponent,
+    CategoryComponent,
   ],
   imports: [
     BrowserModule,
@@ -50,30 +52,16 @@ import { provideHttpClient } from '@angular/common/http';
       modules: {
         syntax: false,
         toolbar: [
-          ['bold', 'italic', 'underline', 'strike'], // toggled buttons
+          ['bold', 'italic', 'underline', 'strike'],
           ['blockquote', 'code-block'],
-
-          [{ header: 1 }, { header: 2 }], // custom button values
-          [{ list: 'ordered' }, { list: 'bullet' }],
-          [{ script: 'sub' }, { script: 'super' }], // superscript/subscript
-          [{ indent: '-1' }, { indent: '+1' }], // outdent/indent
-          [{ direction: 'rtl' }], // text direction
-
-          [{ size: ['small', false, 'large', 'huge'] }], // custom dropdown
-          [{ header: [1, 2, 3, 4, 5, 6, false] }],
-
-          [{ color: [] }, { background: [] }], // dropdown with defaults from theme
-          [{ font: [] }],
-          [{ align: [] }],
-
-          ['clean'], // remove formatting button
-
-          ['link', 'image', 'video'], // link and image, video
+          [{ header: 1 }, { header: 2 }],
+          [{ script: 'sub' }, { script: 'super' }],
+          ['link'],
         ],
       },
     }),
   ],
-  providers: [provideHttpClient()],
+  providers: [provideHttpClient(), CookieService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

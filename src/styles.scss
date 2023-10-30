@@ -132,15 +132,13 @@ a {
 * {
   font-family: "Roboto", sans-serif;
   box-sizing: border-box;
+  user-select: none;
 }
 .ql-toolbar {
   margin-top: 50px;
 }
-.ql-container {
-  img {
-    width: 400px;
-    height: 250px;
-    margin: 0 auto;
-    object-fit: cover;
-  }
+.ng-untouched,
+.ng-pristine,
+.ng-valid {
+  width: 100%;
 }

@@ -22,6 +22,6 @@ export class CardItemComponent {
     fileExtension: '',
     fileName: '',
     filePath: '',
-    fileSize: 0,
+    fileSizeInByte: 0,
   };
 }
