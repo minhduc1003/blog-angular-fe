@@ -2,11 +2,8 @@
   <div class="home--container__text">
     <h1>Monkey Blogging</h1>
     <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-      minim veniam, quis nostrud exercitation ullamco laboris nisi.
+      A website created to share information, knowledge, experience and personal opinions of writers with readers on the internet.
     </p>
-    <button>Get Start</button>
   </div>
   <img src="../../../assets/Illustration 2.png" alt="asd" />
 </section>
@@ -17,7 +14,7 @@
     </h1>
   </div>
   <div class="home--news__items-container">
-    <app-card-item *ngFor="let item of blog;" [author]="item.author" [category]="item.category" [title]="item.title" [image]="item.image" [description]="item.description" [id]="item.id"></app-card-item>
+    <app-card-item *ngFor="let item of blog;" [author]="item.author" [category]="item.category" [title]="item.title" [image]="item.image" [description]="item.description" [id]="item.id" [page]=true></app-card-item>
   </div>
 
 </section>

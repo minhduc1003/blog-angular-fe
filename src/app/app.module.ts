@@ -22,7 +22,7 @@ import { QuillModule } from 'ngx-quill';
 import { RouterModule } from '@angular/router';
 import { CardItemComponent } from './pages/home/components/card-item/card-item.component';
 import { provideHttpClient } from '@angular/common/http';
-import { CategoryComponent } from './pages/category/category/category.component';
+import { CategoryComponent } from './pages/category/category.component';
 
 @NgModule({
   declarations: [

@@ -12,6 +12,7 @@ export class CardItemComponent {
   @Input() title: string = '';
   @Input() description: string = '';
   @Input() author: string = '';
+  @Input() page: boolean = true;
   @Input() category: Category = {
     id: '',
     name: '',

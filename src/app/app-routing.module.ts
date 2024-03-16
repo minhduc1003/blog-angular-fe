@@ -14,7 +14,7 @@ import { MainLayoutComponent } from './layout/main-layout/main-layout.component'
 import { SignupComponent } from './pages/signup/signup.component';
 import { CreateBlogComponent } from './pages/create-blog/create-blog.component';
 import { AuthGuard } from './Guard/auth.guard';
-import { CategoryComponent } from './pages/category/category/category.component';
+import { CategoryComponent } from './pages/category/category.component';
 
 const routes: Routes = [
   {

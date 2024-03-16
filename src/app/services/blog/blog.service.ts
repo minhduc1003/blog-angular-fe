@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { Blog } from 'src/app/type/IBlog';
 import { BlogDto } from 'src/app/type/IBlogDto';
 import { Category } from 'src/app/type/ICategory';
+import { CategoryDto } from 'src/app/type/ICategoryDto';
 import { Image } from 'src/app/type/IImage';
 
 @Injectable({
@@ -37,5 +38,14 @@ export class BlogService {
   }
   createBlog(data: BlogDto): Observable<BlogDto> {
     return this.http.post<BlogDto>('https://localhost:7076/api/blog', data);
+  }
+  createCategory(data: CategoryDto): Observable<Category> {
+    return this.http.post<Category>(
+      'https://localhost:7076/api/category',
+      data
+    );
+  }
+  getByCategoryId(categoryId: string): Observable<Blog[]>{
+    return this.http.get<Blog[]>(`${this.apiUlr}/findCategory/${categoryId}`);
   }
 }

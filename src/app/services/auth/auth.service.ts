@@ -28,8 +28,9 @@ export class AuthService {
     //     });
     // });
   }
-  register(userName: string, email: string, password: string): Observable<any> {
+  register(fullName:string,userName: string, email: string, password: string): Observable<any> {
     const data = {
+      fullName,
       userName,
       password,
       email,

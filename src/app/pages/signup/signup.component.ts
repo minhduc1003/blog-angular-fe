@@ -17,7 +17,7 @@ export class SignupComponent {
   constructor(private auth_service: AuthService, private router: Router) {}
   handleSubmit(): void {
     this.auth_service
-      .register(this.userName, this.email, this.password)
+      .register(this.userName,this.userName, this.email, this.password)
       .subscribe(() => this.router.navigate(['/login']));
   }
 }

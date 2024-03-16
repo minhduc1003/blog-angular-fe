@@ -7,10 +7,18 @@ import { CookieService } from 'ngx-cookie-service';
 })
 export class HeaderComponent implements OnInit {
   isLogin = false;
+  isActive = false;
   constructor(private cookie: CookieService) {}
   ngOnInit(): void {
     !this.cookie.get('token') == true
       ? (this.isLogin = true)
       : (this.isLogin = false);
+  }
+  handleClick(){
+    this.isActive =!this.isActive;
+  }
+  handleLogOut(){
+    this.cookie.delete('token');
+    this.isLogin = true;
   }
 }
