@@ -15,18 +15,6 @@ export class AuthService {
       password,
     };
     return this.http.post<{ token: string }>(`${this.apiUlr}/login`, data);
-    // new Promise<string>(() => {
-    //   this.http
-    //     .post<{ token: string }>(`${this.apiUlr}/login`, data)
-    //     .toPromise()
-    //     .then((res) => {
-    //       const token = res?.token;
-    //       this.token = token;
-    //       if (token) {
-    //         localStorage.setItem('token', token);
-    //       }
-    //     });
-    // });
   }
   register(fullName:string,userName: string, email: string, password: string): Observable<any> {
     const data = {
