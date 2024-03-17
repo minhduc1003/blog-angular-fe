@@ -1,7 +1,7 @@
 .login {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 40px;
+  padding: 30px;
   img {
     display: block;
     margin: 0 auto;
@@ -55,6 +55,18 @@
     .link {
       color: #2ebac1;
       cursor: pointer;
+    }
+    .error{
+      background-color: rgba(255, 99, 71, 0.5);
+      padding: 20px;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      margin-top: 10px;
+      gap: 10px;
+      p{
+        color: red;
+      }
     }
   }
 }

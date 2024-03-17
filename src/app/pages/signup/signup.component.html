@@ -7,7 +7,11 @@
   <form class="login-form">
     <div class="login-container">
       <div class="login-text">
-        <label htmlFor="userName">Name</label>
+        <label htmlFor="fullName">Name</label>
+        <input id="fullName" name="fullName" placeholder="Enter your user name" [(ngModel)]="fullName" />
+      </div>
+      <div class="login-text">
+        <label htmlFor="userName">User Name</label>
         <input id="userName" name="userName" placeholder="Enter your user name" [(ngModel)]="userName" />
       </div>
       <div class="login-text">
@@ -17,6 +21,10 @@
       <app-input-password (passwordEvent)="setPassword($event)"></app-input-password>
       <p class="text-base">If you have an account?
         <a href="/login" class="link"> Sign In</a>
+      <div *ngIf="errorMessage.email!=''||errorMessage.userName!=''" class="error">
+        <p *ngIf="errorMessage.email!=''">{{errorMessage.email}}</p>
+        <p *ngIf="errorMessage.userName!=''">{{errorMessage.userName}}</p>
+      </div>
     </div>
     <div class="btn-container" (click)="handleSubmit()">
       <button type="submit">

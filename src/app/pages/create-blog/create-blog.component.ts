@@ -49,15 +49,12 @@ export class CreateBlogComponent implements OnInit {
     this.blog.imageId = this.image.id;
     this.blog.title = this.title;
     this.blog.description = this.editorValue;
-    console.log(this.blog);
     this.blog_service.createBlog(this.blog).subscribe((res) => {
-      console.log(res);
     });
   }
   handleUpload(e: any): void {
     if (e.target.files[0]) {
       this.blog_service.uploadImage(e.target.files[0]).subscribe((data) => {
-        console.log(data);
         this.image = data;
         this.disabledUploadImage = true;
       });

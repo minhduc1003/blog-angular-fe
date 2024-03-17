@@ -46,6 +46,6 @@ export class BlogService {
     );
   }
   getByCategoryId(categoryId: string): Observable<Blog[]>{
-    return this.http.get<Blog[]>(`${this.apiUlr}/findCategory/${categoryId}`);
+    return this.http.get<Blog[]>(`${this.apiUlr}/blog/findCategory/${categoryId}`);
   }
 }

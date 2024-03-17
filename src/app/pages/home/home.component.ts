@@ -20,7 +20,6 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.blog_services.getAllBlog().subscribe({
       next: (blog) => {
         this.blog = blog;
-        console.log(blog);
       },
     });
   }

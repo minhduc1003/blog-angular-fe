@@ -41,7 +41,6 @@ export class BlogDetailComponent implements OnInit, OnDestroy {
     this.blog_service.getById(this.id).subscribe({
       next: (blog) => {
         this.blog = blog;
-        console.log(blog);
       },
     });
   }

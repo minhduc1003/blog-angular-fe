@@ -12,7 +12,6 @@ export class CategoryComponent {
 
   handleSubmit(): void {
     this.blog_service.createCategory({ name: this.name }).subscribe((res) => {
-      console.log(res);
     });
   }
 }

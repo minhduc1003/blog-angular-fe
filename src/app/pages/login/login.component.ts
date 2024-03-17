@@ -12,11 +12,9 @@ export class LoginComponent {
   password: string = '';
   setText(value: string): void {
     this.email = value;
-    console.log(value);
   }
   setPassword(value: string): void {
     this.password = value;
-    console.log(value);
   }
   constructor(
     private auth_service: AuthService,
