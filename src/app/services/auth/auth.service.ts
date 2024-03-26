@@ -6,7 +6,7 @@ import { CookieService } from 'ngx-cookie-service';
   providedIn: 'root',
 })
 export class AuthService {
-  apiUlr = 'https://localhost:7076/api/Auth';
+  apiUlr = 'http://ducozil1003.io.vn:9001/api/Auth';
   token: string | undefined = '';
   constructor(private http: HttpClient, private cookie: CookieService) {}
   login(email: string, password: string): Observable<any> {
@@ -16,7 +16,12 @@ export class AuthService {
     };
     return this.http.post<{ token: string }>(`${this.apiUlr}/login`, data);
   }
-  register(fullName:string,userName: string, email: string, password: string): Observable<any> {
+  register(
+    fullName: string,
+    userName: string,
+    email: string,
+    password: string
+  ): Observable<any> {
     const data = {
       fullName,
       userName,

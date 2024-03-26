@@ -12,7 +12,7 @@ import { Image } from 'src/app/type/IImage';
   providedIn: 'root',
 })
 export class BlogService {
-  apiUlr = 'https://localhost:7076/api';
+  apiUlr = 'http://ducozil1003.io.vn:9001/api';
 
   constructor(private http: HttpClient, private cookie: CookieService) {}
   getAllBlog(): Observable<Blog[]> {
@@ -31,21 +31,17 @@ export class BlogService {
   uploadImage(image: File): Observable<any> {
     const formData = new FormData();
     formData.append('FormFile', image);
-    return this.http.post<any>(
-      `${this.apiUlr}/image/upload`,
-      formData
-    );
+    return this.http.post<any>(`${this.apiUlr}/image/upload`, formData);
   }
   createBlog(data: BlogDto): Observable<BlogDto> {
     return this.http.post<BlogDto>(`${this.apiUlr}/blog`, data);
   }
   createCategory(data: CategoryDto): Observable<Category> {
-    return this.http.post<Category>(
-      `${this.apiUlr}/category`,
-      data
-    );
+    return this.http.post<Category>(`${this.apiUlr}/category`, data);
   }
-  getByCategoryId(categoryId: string): Observable<Blog[]>{
-    return this.http.get<Blog[]>(`${this.apiUlr}/blog/findCategory/${categoryId}`);
+  getByCategoryId(categoryId: string): Observable<Blog[]> {
+    return this.http.get<Blog[]>(
+      `${this.apiUlr}/blog/findCategory/${categoryId}`
+    );
   }
 }
