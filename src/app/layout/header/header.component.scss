@@ -4,6 +4,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 10px;
 }
 .header--left {
   display: flex;
@@ -91,5 +92,13 @@
   }
   100% {
     transform: translateY(0);
+  }
+}
+@media (max-width: 600px) {
+  .header--left a {
+    display: none;
+  }
+  .header--right__auth {
+    padding: 16px 20px !important;
   }
 }

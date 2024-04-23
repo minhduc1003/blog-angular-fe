@@ -1,12 +1,18 @@
-.category-header{
-    background-color: lightblue;
-    padding: 20px;
-    margin:  15px 0;
-    border-radius: 10px;
+.category-header {
+  background-color: lightblue;
+  padding: 20px;
+  margin: 15px 10px;
+  border-radius: 10px;
 }
-.blog-item{
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    flex-wrap: wrap;
+.blog-item {
+  margin: 0 10px 0 10px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.blog-heading {
+  margin: 0 10px 40px 10px;
+  font-size: 30px;
+  font-weight: 600;
 }

@@ -12,7 +12,7 @@ import { Image } from 'src/app/type/IImage';
   providedIn: 'root',
 })
 export class BlogService {
-  apiUlr = 'http://localhost:5002/api';
+  apiUlr = 'http://ducozil1003.io.vn:9001/api';
 
   constructor(private http: HttpClient, private cookie: CookieService) {}
   getAllBlog(): Observable<Blog[]> {

@@ -1,5 +1,12 @@
 .my-blog-heading {
-  margin-bottom: 40px;
+  margin: 0 10px 40px 10px;
   font-size: 30px;
   font-weight: 600;
+}
+.blog-item {
+  margin: 0 10px 0 10px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
 }

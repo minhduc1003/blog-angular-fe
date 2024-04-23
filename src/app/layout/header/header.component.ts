@@ -14,11 +14,12 @@ export class HeaderComponent implements OnInit {
       ? (this.isLogin = true)
       : (this.isLogin = false);
   }
-  handleClick(){
-    this.isActive =!this.isActive;
+  handleClick() {
+    this.isActive = !this.isActive;
   }
-  handleLogOut(){
+  handleLogOut() {
     this.cookie.delete('token');
+    this.cookie.delete('userId');
     this.isLogin = true;
   }
 }
