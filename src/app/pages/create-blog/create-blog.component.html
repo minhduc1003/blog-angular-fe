@@ -8,19 +8,19 @@
     <div class="input-text">
       <label htmlFor="author">Author</label>
 
-      <input id="author" placeholder="Enter your author" [(ngModel)]="author" />
+      <input id="author" [placeholder]="authorName" disabled />
     </div>
     <div class="input-text">
       <label htmlFor="category">Category</label>
       <div class="drop-down">
         <div class="input-select" (click)="handleOpen()">
-          <input id="category" value='{{categoryName}}' name="category" type="text" disabled />
+          <input id="category" [(ngModel)]="categoryName" name="category" type="text" disabled />
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="down">
             <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
           </svg>
         </div>
         <ul *ngIf="dropDownOpen">
-          <li *ngFor="let item of categoryList;" (click)="getValue(item.id,item.name)">{{item.name}}</li>
+          <li *ngFor="let item of categoryList;" (click)="getValue(item.id,item.name); dropDownOpen=false">{{item.name}}</li>
           <button class="drop-down-button" [routerLink]="['/category']">Add new category</button>
         </ul>
       </div>

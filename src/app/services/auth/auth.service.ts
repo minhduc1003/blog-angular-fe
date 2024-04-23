@@ -6,7 +6,7 @@ import { CookieService } from 'ngx-cookie-service';
   providedIn: 'root',
 })
 export class AuthService {
-  apiUlr = 'http://ducozil1003.io.vn:9001/api/Auth';
+  apiUlr = 'http://localhost:5002/api/Auth';
   token: string | undefined = '';
   constructor(private http: HttpClient, private cookie: CookieService) {}
   login(email: string, password: string): Observable<any> {
@@ -37,5 +37,10 @@ export class AuthService {
     } else {
       return true;
     }
+  }
+  getUser() {
+    return this.http.get<any>(
+      `${this.apiUlr}/getUserById/${this.cookie.get('userId')}`
+    );
   }
 }

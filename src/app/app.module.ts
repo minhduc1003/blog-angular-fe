@@ -7,7 +7,6 @@ import { HeaderComponent } from './layout/header/header.component';
 import { MainComponent } from './layout/main/main.component';
 import { HomeComponent } from './pages/home/home.component';
 import { BlogComponent } from './pages/blog/blog.component';
-import { ContactComponent } from './pages/contact/contact.component';
 import { TypeOfContentComponent } from './pages/home/components/type-of-content/type-of-content.component';
 import { DayOfAuthorComponent } from './pages/home/components/day-of-author/day-of-author.component';
 import { BlogDetailComponent } from './pages/blog-detail/blog-detail.component';
@@ -19,11 +18,11 @@ import { InputPasswordComponent } from './components/input-password/input-passwo
 import { FormsModule } from '@angular/forms';
 import { CreateBlogComponent } from './pages/create-blog/create-blog.component';
 import { QuillModule } from 'ngx-quill';
-import { RouterModule } from '@angular/router';
 import { CardItemComponent } from './pages/home/components/card-item/card-item.component';
 import { provideHttpClient } from '@angular/common/http';
 import { CategoryComponent } from './pages/category/category.component';
-
+import { ToastService, AngularToastifyModule } from 'angular-toastify';
+import { MyBlogComponent } from './pages/my-blog/my-blog.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +30,7 @@ import { CategoryComponent } from './pages/category/category.component';
     MainComponent,
     HomeComponent,
     BlogComponent,
-    ContactComponent,
+    MyBlogComponent,
     TypeOfContentComponent,
     DayOfAuthorComponent,
     BlogDetailComponent,
@@ -46,6 +45,7 @@ import { CategoryComponent } from './pages/category/category.component';
   ],
   imports: [
     BrowserModule,
+    AngularToastifyModule,
     AppRoutingModule,
     FormsModule,
     QuillModule.forRoot({
@@ -61,7 +61,7 @@ import { CategoryComponent } from './pages/category/category.component';
       },
     }),
   ],
-  providers: [provideHttpClient(), CookieService],
+  providers: [provideHttpClient(), CookieService, ToastService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -7,7 +7,6 @@ import {
 } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { BlogComponent } from './pages/blog/blog.component';
-import { ContactComponent } from './pages/contact/contact.component';
 import { BlogDetailComponent } from './pages/blog-detail/blog-detail.component';
 import { LoginComponent } from './pages/login/login.component';
 import { MainLayoutComponent } from './layout/main-layout/main-layout.component';
@@ -15,6 +14,7 @@ import { SignupComponent } from './pages/signup/signup.component';
 import { CreateBlogComponent } from './pages/create-blog/create-blog.component';
 import { AuthGuard } from './Guard/auth.guard';
 import { CategoryComponent } from './pages/category/category.component';
+import { MyBlogComponent } from './pages/my-blog/my-blog.component';
 
 const routes: Routes = [
   {
@@ -31,11 +31,15 @@ const routes: Routes = [
         component: BlogComponent,
       },
       {
-        path: 'contact',
-        component: ContactComponent,
+        path: 'my-blog',
+        component: MyBlogComponent,
       },
       {
         path: 'blog/:id',
+        component: BlogDetailComponent,
+      },
+      {
+        path: 'my-blog/:id',
         component: BlogDetailComponent,
       },
       {

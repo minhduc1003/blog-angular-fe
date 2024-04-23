@@ -17,7 +17,10 @@ import { Blog } from 'src/app/type/IBlog';
 export class BlogDetailComponent implements OnInit, OnDestroy {
   constructor(private blog_service: BlogService) {}
   blog: Blog = {
-    author: '',
+    author: {
+      id: '',
+      name: '',
+    },
     categoryId: '',
     description: '',
     id: '',
@@ -46,7 +49,10 @@ export class BlogDetailComponent implements OnInit, OnDestroy {
   }
   ngOnDestroy(): void {
     this.blog = {
-      author: '',
+      author: {
+        id: '',
+        name: '',
+      },
       categoryId: '',
       description: '',
       id: '',

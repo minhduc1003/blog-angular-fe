@@ -2,6 +2,6 @@
   <h2 class="category-header">{{cate.name}}</h2>
   <p *ngIf="cate.data.length==0">No blog in this category</p>
   <div class="blog-item">
-    <app-card-item *ngFor="let item of cate.data;" [author]="item.author" [category]="item.category" [title]="item.title" [image]="item.image" [description]="item.description" [id]="item.id" [page]=false></app-card-item>
+    <app-card-item *ngFor="let item of cate.data;" [author]="item.author.name" [category]="item.category" [title]="item.title" [image]="item.image" [description]="item.description" [id]="item.id" [page]=2></app-card-item>
   </div>
 </div>

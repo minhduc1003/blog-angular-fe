@@ -1,0 +1,4 @@
+<h1 class="my-blog-heading">My Blog</h1>
+<div class="blog-item">
+  <app-card-item *ngFor="let item of data;" [author]="item.author.name" [category]="item.category" [title]="item.title" [image]="item.image" [description]="item.description" [id]="item.id" [page]=3></app-card-item>
+</div>

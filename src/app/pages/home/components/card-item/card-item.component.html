@@ -1,4 +1,4 @@
-<div *ngIf="id!=''" class="home--news__item-container" [routerLink]="page ? ['blog/', id] : [id]">
+<div *ngIf="id!=''" class="home--news__item-container" [routerLink]="page==1 ? ['blog/', id] : [id]">
   <div class="home--news__item-overlay"></div>
   <img class="home--news__image" src="{{image.filePath}}" alt="asd" />
   <div class="home--news__detail-wrapper">

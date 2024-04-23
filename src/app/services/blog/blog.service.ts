@@ -12,7 +12,7 @@ import { Image } from 'src/app/type/IImage';
   providedIn: 'root',
 })
 export class BlogService {
-  apiUlr = 'http://ducozil1003.io.vn:9001/api';
+  apiUlr = 'http://localhost:5002/api';
 
   constructor(private http: HttpClient, private cookie: CookieService) {}
   getAllBlog(): Observable<Blog[]> {
@@ -42,6 +42,11 @@ export class BlogService {
   getByCategoryId(categoryId: string): Observable<Blog[]> {
     return this.http.get<Blog[]>(
       `${this.apiUlr}/blog/findCategory/${categoryId}`
+    );
+  }
+  GetByUserCreated(): Observable<Blog[]> {
+    return this.http.get<Blog[]>(
+      `${this.apiUlr}/blog/GetByUserCreated/${this.cookie.get('userId')}`
     );
   }
 }

@@ -14,7 +14,7 @@
     </h1>
   </div>
   <div class="home--news__items-container">
-    <app-card-item *ngFor="let item of blog;" [author]="item.author" [category]="item.category" [title]="item.title" [image]="item.image" [description]="item.description" [id]="item.id" [page]=true></app-card-item>
+    <app-card-item *ngFor="let item of blog;" [author]="item.author.name" [category]="item.category" [title]="item.title" [image]="item.image" [description]="item.description" [id]="item.id" [page]=1></app-card-item>
   </div>
 
 </section>

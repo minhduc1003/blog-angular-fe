@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Category } from 'src/app/type/ICategory';
 import { Image } from 'src/app/type/IImage';
 
@@ -12,7 +12,7 @@ export class CardItemComponent {
   @Input() title: string = '';
   @Input() description: string = '';
   @Input() author: string = '';
-  @Input() page: boolean = true;
+  @Input() page: number = 1;
   @Input() category: Category = {
     id: '',
     name: '',
