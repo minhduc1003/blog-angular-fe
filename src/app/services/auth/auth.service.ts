@@ -32,7 +32,7 @@ export class AuthService {
     return this.http.post<any>(`${this.apiUlr}/Register`, data);
   }
   isLogin(): boolean {
-    if (this.cookie.get('token') == null) {
+    if (this.cookie.get('token-blog') == null) {
       return false;
     } else {
       return true;

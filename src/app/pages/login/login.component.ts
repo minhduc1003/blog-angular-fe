@@ -24,7 +24,7 @@ export class LoginComponent {
   handleSubmit(): void {
     // this.auth_service.login(this.email, this.password);
     this.auth_service.login(this.email, this.password).subscribe((data) => {
-      this.cookie.set('token', data.token, new Date().getDate() + 1);
+      this.cookie.set('token-blog', data.token, new Date().getDate() + 1);
       this.cookie.set('userId', data.id);
       this.router.navigate(['/']);
     });

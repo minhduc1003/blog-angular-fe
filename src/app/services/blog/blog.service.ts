@@ -18,7 +18,7 @@ export class BlogService {
   getAllBlog(): Observable<Blog[]> {
     return this.http.get<Blog[]>(`${this.apiUlr}/blog`, {
       headers: {
-        Authorization: `Bearer ${localStorage.getItem('token')}`,
+        Authorization: `Bearer ${localStorage.getItem('token-blog')}`,
       },
     });
   }

@@ -6,7 +6,7 @@
     <a *ngIf="!isLogin" [routerLink]="['my-blog']">My Blog</a>
   </div>
   <div class="header--right">
-    <a class="header--right__auth" href='{{isLogin?"/login":"/create"}}'>
+    <a class="header--right__auth" [routerLink]="isLogin ? '/login' : '/create'">
       <p>
         {{isLogin?"login":"Create a Post"}}
       </p>

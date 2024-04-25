@@ -12,7 +12,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   blog: Blog[] = [];
   constructor(private blog_services: BlogService) {}
   ngOnInit(): void {
-    if (localStorage.getItem('token')) {
+    if (localStorage.getItem('token-blog')) {
       this.isLogIn = true;
     } else {
       this.isLogIn = false;

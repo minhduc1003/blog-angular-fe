@@ -10,7 +10,7 @@ export class HeaderComponent implements OnInit {
   isActive = false;
   constructor(private cookie: CookieService) {}
   ngOnInit(): void {
-    !this.cookie.get('token') == true
+    !this.cookie.get('token-blog') == true
       ? (this.isLogin = true)
       : (this.isLogin = false);
   }
@@ -18,7 +18,7 @@ export class HeaderComponent implements OnInit {
     this.isActive = !this.isActive;
   }
   handleLogOut() {
-    this.cookie.delete('token');
+    this.cookie.delete('token-blog');
     this.cookie.delete('userId');
     this.isLogin = true;
   }

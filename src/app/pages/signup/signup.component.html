@@ -20,7 +20,7 @@
       </div>
       <app-input-password (passwordEvent)="setPassword($event)"></app-input-password>
       <p class="text-base">If you have an account?
-        <a href="/login" class="link"> Sign In</a>
+        <a [routerLink]="['/login']" class="link"> Sign In</a>
       <div *ngIf="errorMessage.email!=''||errorMessage.userName!=''" class="error">
         <p *ngIf="errorMessage.email!=''">{{errorMessage.email}}</p>
         <p *ngIf="errorMessage.userName!=''">{{errorMessage.userName}}</p>

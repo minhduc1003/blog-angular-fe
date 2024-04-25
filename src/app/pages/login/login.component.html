@@ -8,7 +8,7 @@
     <div class="login-container">
       <app-input-text [name]="'Email'" placeholder="Enter your email" (textEvent)="setText($event)"></app-input-text>
       <app-input-password (passwordEvent)="setPassword($event)"></app-input-password>
-      <p class="text-base">Don’t have an account?<a href="/signup" class="link"> Sign up</a></p>
+      <p class="text-base">Don’t have an account?<a [routerLink]="['/signup']" class="link"> Sign up</a></p>
     </div>
     <div class="btn-container">
       <button type="submit" (click)="handleSubmit()">
